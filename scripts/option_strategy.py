@@ -27,7 +27,7 @@ if option_strategy in valid_strategies:
         payoff = -max(0, strike_price - stock_price)
         profit = payoff + premium 
         breakeven = strike_price - premium 
-        print(f"the payoff for the short put position: {payoff:.2f},profit: {profit:.2f}, breakeven price: {breakeven}")
+        print(f"the payoff for the short put position: {payoff:.2f},profit: {profit:.2f}, breakeven price: {breakeven:.2f}")
 else : 
     print('please select amongst the strategies provided')
 
