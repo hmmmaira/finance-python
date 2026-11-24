@@ -46,11 +46,15 @@ else :
     print("please enter an available option")
 
 #plotting the chart
-plt.plot(stock_range,payoff, label = 'payoff')
-plt.plot(stock_range,profit, label = 'profit')
-plt.xlabel('stock price range at expiration')
-plt.ylabel('payoff/profit')
-plt.title('option strategy analysis')
-plt.legend()
+plt.plot(stock_range,payoff, label = 'payoff',color = "goldenrod")           # plot the payoff line
+plt.plot(stock_range,profit, label = 'profit', color = "darkgreen")           # plot the profit line
+plt.xlabel('stock price range at expiration')            # x-axis label
+plt.ylabel('payoff/profit')                              # y-axis label
+plt.title('option strategy analysis')                    # title of the chart
+plt.axhline(y=0, color = "gray" , label = 'zero-profit line')                                         # zero-profit line
+plt.axvline(x=breakeven,color = "green", linestyle = ":", label = 'break-even')       # breakeven
+plt.axvline(x=strike_price,color = "pink", linestyle = "--" , label = 'strike-price')  # strike price
+plt.legend()                                             # shows the legends
+plt.savefig('outputs/charts/options_payoff_visuals.png', dpi = 300 , bbox_inches = 'tight')
 plt.show()
 
